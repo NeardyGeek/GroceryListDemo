@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        app:showAsAction="never"
+        android:title="profile"/>
+
+    <item android:id="@+id/menu_setting"
+        android:title="settings"/>
+
+    <item android:id="@+id/menu_cart"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        app:showAsAction="always"
+        android:title="cart"/>
+
+</menu>

@@ -1,0 +1,11 @@
+<androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tool_bar"
+    android:background="@color/teal_200"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+</androidx.appcompat.widget.Toolbar>
+
+
+
+
