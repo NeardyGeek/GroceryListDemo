@@ -49,6 +49,13 @@
             android:text="you saved: "
             android:textSize="20dp" />
 
+        <TextView
+            android:id="@+id/order_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="payment method: "
+            android:textSize="20dp" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -43,6 +43,7 @@ class OrderAdapter(var mContext: Context) : RecyclerView.Adapter<OrderAdapter.Vi
             itemView.order_sub_total.text = "subtotal: $${orderResponse.orderSummary.orderAmount}"
             itemView.order_amount.text = "you paid: $${orderResponse.orderSummary.totalAmount}"
             itemView.order_discounts.text = "you saved: $${orderResponse.orderSummary.discount}"
+            itemView.order_method.text = "payment method: ${orderResponse.payment.paymentMode}"
 
             itemView.setOnClickListener{
                 var intent = Intent(mContext, OrderDetailsActivity::class.java)

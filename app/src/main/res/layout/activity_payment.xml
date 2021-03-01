@@ -2,96 +2,103 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include layout="@layout/tool_bar"/>
-
     <LinearLayout
-
-        android:id="@+id/order_summary"
         android:layout_width="match_parent"
-        android:layout_height="595dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        android:visibility="visible">
+        <include layout="@layout/tool_bar"/>
 
         <ImageView
             android:id="@+id/main_image_view"
             android:layout_width="wrap_content"
             android:layout_height="250dp"
-
+            android:layout_above="@+id/order_summary"
             android:scaleType="fitXY"
             android:src="@drawable/logo" />
 
-        <TextView
-            android:id="@+id/shipping_address"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/order_summary"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="shipping to: "
-            android:textSize="23dp" />
-
-        <TextView
-            android:id="@+id/sub_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="subtotal: "
-            android:textSize="23dp" />
-
-        <TextView
-            android:id="@+id/order_discounts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="you saved: "
-            android:textSize="23dp" />
 
 
-        <TextView
-            android:id="@+id/shipment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:text="shipment: 0.0"
-            android:textSize="23dp" />
+            android:orientation="vertical"
+            android:visibility="visible">
 
 
-        <RadioGroup
-            android:id="@+id/radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/check_online"
+            <TextView
+                android:id="@+id/shipping_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:text="pay online"
-                android:textSize="26dp"
-                android:textStyle="italic|bold" />
+                android:text="shipping to: "
+                android:textSize="23dp" />
 
-
-            <RadioButton
-                android:id="@+id/check_cash"
+            <TextView
+                android:id="@+id/sub_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="pay cash"
-                android:textSize="26dp"
-                android:textStyle="bold|italic" />
+                android:text="subtotal: "
+                android:textSize="23dp" />
 
-        </RadioGroup>
+            <TextView
+                android:id="@+id/order_discounts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="you saved: "
+                android:textSize="23dp" />
 
+
+            <TextView
+                android:id="@+id/shipment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:text="shipment: 0.0"
+                android:textSize="23dp" />
+
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/check_online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="pay online"
+                    android:textSize="26dp"
+                    android:textStyle="italic|bold" />
+
+
+                <RadioButton
+                    android:id="@+id/check_cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="pay cash"
+                    android:textSize="26dp"
+                    android:textStyle="bold|italic" />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+        
 
     </LinearLayout>
 
@@ -102,7 +109,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Thank you for shopping with us"
+        android:text="Thank you for shopping with us!"
+        android:textSize="36dp"
+        android:textStyle="italic|bold"
         android:id="@+id/text_thank"/>
 
     <Button
@@ -111,6 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="place your order"
+
         android:id="@+id/button_place_order"/>
 
     <Button

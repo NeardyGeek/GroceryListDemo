@@ -106,7 +106,6 @@ class PaymentActivity : AppCompatActivity() {
 
         var address = intent.getSerializableExtra(Address.KEY_ADDRESS) as Address
 
-        onRadioButtonClicked(radio_group)
         var subTotal = MathHelper.round(dbHelper.getSubtotal())
         var discounts = MathHelper.round(dbHelper.getDiscounts())
         var shipTo = "${address.houseNo} ${address.streetName}"
@@ -115,7 +114,7 @@ class PaymentActivity : AppCompatActivity() {
         shipping_address.text = "shipping to: $shipTo"
         order_discounts.text = "you saved: $$discounts"
 
-       
+
 
         button_place_order.setOnClickListener {
             submitOrder(dbHelper, sessionManager)
@@ -179,7 +178,7 @@ class PaymentActivity : AppCompatActivity() {
 
     }
 
-    private fun onRadioButtonClicked(view: View) {
+    fun onRadioButtonClicked(view: View) {
         if (view is RadioButton) {
             // Is the button now checked?
             val checked = view.isChecked
@@ -189,12 +188,14 @@ class PaymentActivity : AppCompatActivity() {
                 R.id.check_cash ->
                     if (checked) {
                         paymentMode = "cash"
-                        //button_place_order.visibility = View.VISIBLE
+                        button_place_order.visibility = View.VISIBLE
+
+
                     }
                 R.id.check_online ->
                     if (checked) {
                         paymentMode = "online"
-                        //button_place_order.visibility = View.VISIBLE
+                        button_place_order.visibility = View.VISIBLE
 
 
                     }
